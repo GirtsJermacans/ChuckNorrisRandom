@@ -1,0 +1,65 @@
+﻿<Window x:Class="ChuckNorrisFun.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChuckNorrisFun"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="MainWindow" MinHeight="525" MinWidth="800" MaxHeight="525"
+        MaxWidth="800" WindowStartupLocation="CenterScreen" Foreground="#0ABDA0">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color ="#D4DCA9"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition MinHeight="250" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"
+                Margin="100 0 100 10" BorderThickness="2"
+                BorderBrush="#BF9D7A" Background="#EBF2EA">
+            <TextBlock x:Name="Title" Text="CHUCK NORRIS" 
+                TextAlignment="Center" FontSize="40" Background="#EBF2EA"/>
+        </Border>
+        <Image x:Name="imgLogo" Grid.Column="2" Grid.Row="4" />
+        <Border Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2"
+                Margin="100 0 100 10" BorderThickness="2" BorderBrush="#BF9D7A">
+            <TextBlock x:Name="JokeArea" TextAlignment="Center" 
+                   TextWrapping="Wrap" FontSize="20" Background="#EBF2EA" />
+        </Border>
+        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="5" >
+            <StackPanel Margin="250 0 250 0">
+                <ComboBox x:Name="cbxCategories" 
+                    SelectionChanged="CbxCategories_SelectionChanged"
+                    BorderThickness="1">
+                    <ComboBoxItem Background="#0ABDA0" IsSelected="True">Random</ComboBoxItem>
+                    <ComboBoxItem Background="#0ABDA0">Animal</ComboBoxItem>
+                    <ComboBoxItem Background="#0ABDA0">Celebrity</ComboBoxItem>
+                    <ComboBoxItem Background="#0ABDA0">Sport</ComboBoxItem>
+                    <ComboBoxItem Background="#0ABDA0">Dev</ComboBoxItem>
+                    <ComboBoxItem Background="#0ABDA0">Food</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="btnGenerate" Content="Connecting..." FontSize="20"
+                BorderThickness="2" BorderBrush="#BF9D7A" Click="BtnGenerate_Click"
+                Background="#EBF2EA" Foreground="#0ABDA0"/>
+            </StackPanel>
+            <Button x:Name="btnSearch" Content="Search By Word" Click="BtnSearch_Click"
+                    Margin="250 5 250 0" FontSize="20" BorderThickness="2"
+                    BorderBrush="#BF9D7A" Background="#EBF2EA" Foreground="#0ABDA0"/>
+            <Button x:Name="btnExit" Content="Exit" BorderThickness="2"
+                    BorderBrush="#BF9D7A" Background="#EBF2EA"
+                    Margin="250 5 250 10" FontSize="20" Click="BtnExit_Click" Foreground="#0ABDA0"/>            
+        </StackPanel>
+    </Grid>
+</Window>
